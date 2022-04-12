@@ -1,0 +1,42 @@
+﻿@using MvcKutubhane.Models.Entity
+@model List<TBLHAREKET>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Odunc Kitap Listesi</h2>
+
+@*@using (Html.BeginForm("Index", "Kitap", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Aranacak Kitap Adini Girin: &nbsp; </b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}*@
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adi</th>
+        <th>Uye</th>
+        <th>Personel</th>
+        <th>Alish Tarihi</th>
+        <th>Iade Tarihi</th>
+        <th>Iade Al</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.ID</td>
+            <td>@k.TBLKITAP.AD</td>
+            <td>@k.TBLUYELER.AD&nbsp; @k.TBLUYELER.SOYAD</td>
+            <td>@k.TBLPERSONEL.PERSONEL</td>
+            <td>@Convert.ToDateTime(k.ALISTARIH).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(k.IADETARIH).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Odunc/Odunciade/@k.ID" class="btn btn-default" style="background-color:#b6ff00">Kitabi Iade Et</a></td>
+        </tr>
+    }
+</table>
+

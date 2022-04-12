@@ -1,0 +1,36 @@
+﻿@model MvcKutubhane.Models.Entity.TBLKITAP
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Kitap Adi</label>
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Kategori</label>
+        @Html.DropDownListFor(k=>k.TBLKATEQORI.ID,(List<SelectListItem>)ViewBag.dgr1,new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Yazar</label>
+       @Html.DropDownListFor(k=>k.TBLYAZAR.ID,(List<SelectListItem>)ViewBag.dgr2,new { @class ="form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Basim Yili</label>
+        @Html.TextBoxFor(k => k.BASIMYIL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Yayin Evi</label>
+        @Html.TextBoxFor(k => k.YAYINEVI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Sayfa Sayisi</label>
+        @Html.TextBoxFor(k => k.SAYFA, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Kitap Ekle</button>
+    </div>
+</form>

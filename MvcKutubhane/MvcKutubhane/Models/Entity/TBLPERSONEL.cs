@@ -14,7 +14,16 @@ namespace MvcKutubhane.Models.Entity
     
     public partial class TBLPERSONEL
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TBLPERSONEL()
+        {
+            this.TBLHAREKETs = new HashSet<TBLHAREKET>();
+        }
+    
         public byte ID { get; set; }
         public string PERSONEL { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBLHAREKET> TBLHAREKETs { get; set; }
     }
 }

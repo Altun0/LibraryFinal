@@ -1,0 +1,36 @@
+﻿@model MvcKutubhane.Models.Entity.TBLHAREKET
+
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Uye ID</label>
+        @Html.TextBoxFor(k => k.UYE, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap ID</label>
+        @Html.TextBoxFor(k => k.KITAP, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Personel ID</label>
+        @Html.TextBoxFor(k => k.PERSONEL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Alish Tarihi</label>
+        <input type="text" class="form-control" name="ALISHTARIHI" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap Iade  Tarihi</label>
+        <input type="text" class="form-control" name="IADETARIHI" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-group" style="background-color:#c636cc;color:white">Kitabi Odunc Ver</button>
+    </div>
+</form>
+
+

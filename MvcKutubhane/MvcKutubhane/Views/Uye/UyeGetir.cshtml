@@ -1,0 +1,44 @@
+﻿@model MvcKutubhane.Models.Entity.TBLUYELER
+
+@{
+    ViewBag.Title = "UyeGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UyeGuncelle", "Uye", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>Uye Adi</label>
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+        <br />
+        <label>Uye Soyadi</label>
+        @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control" })
+        <br />
+        <label>Kullanici Adi</label>
+        @Html.TextBoxFor(k => k.KULLANICIADI, new { @class = "form-control" })
+        <br /><label>Sifre</label>
+        @Html.TextBoxFor(k => k.SIFRE, new { @class = "form-control" })
+        <br />
+        <label>Mail Adresi</label>
+        @Html.TextBoxFor(k => k.MAIL, new { @class = "form-control" })
+        <br />
+        <label>Uye Okulu</label>
+        @Html.TextBoxFor(k => k.OKUL, new { @class = "form-control" })
+        <br />
+        <label>Telefon</label>
+        @Html.TextBoxFor(k => k.TELEFON, new { @class = "form-control" })
+        <br />
+        <label>Fotograf Linki</label>
+        @Html.TextBoxFor(k => k.FOTOGRAF, new { @class = "form-control" })
+        <br />
+    </div>
+    <div>
+        <button class="btn btn-warning">Guncelle</button>
+    </div>
+}
+

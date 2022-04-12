@@ -7,9 +7,15 @@
 
 <h2>Kitap Sayfasi</h2>
 
-<div style="margin-bottom:15px; margin-top:15px;">
-    <input type="text" class="form-control" placeholder="aranacak kitapi giriniz..." />
-</div>
+@using (Html.BeginForm("Index", "Kitap", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Aranacak Kitap Adini Girin: &nbsp; </b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+
 
 <table class="table table-bordered">
     <tr>
@@ -25,7 +31,7 @@
         <th>Guncelle</th>
     </tr>
     @foreach (var k in Model)
-    { 
+    {
         <tr>
             <td>@k.ID</td>
             <td>@k.AD</td>
