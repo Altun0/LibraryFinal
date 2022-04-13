@@ -260,6 +260,7 @@
     <Content Include="Views\Uye\UyeGetir.cshtml" />
     <Content Include="Views\Odunc\OduncVer.cshtml" />
     <Content Include="Views\Odunc\Index.cshtml" />
+    <Content Include="Views\Odunc\OduncIade.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
