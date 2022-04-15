@@ -3,9 +3,9 @@
     "",
     "\\MvcKutubhane",
     "\\MvcKutubhane\\MvcKutubhane",
-    "\\MvcKutubhane\\MvcKutubhane\\Views",
-    "\\MvcKutubhane\\webpanel\\vendor"
+    "\\MvcKutubhane\\MvcKutubhane\\Controllers",
+    "\\MvcKutubhane\\MvcKutubhane\\Views"
   ],
-  "SelectedNode": "\\MvcKutubhane\\MvcKutubhane\\Views\\Shared",
+  "SelectedNode": "\\MvcKutubhane\\MvcKutubhane\\Controllers\\LoginController.cs",
   "PreviewInSolutionExplorer": false
 }

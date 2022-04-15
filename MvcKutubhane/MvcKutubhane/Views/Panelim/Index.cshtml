@@ -1,8 +1,9 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutPanelim1.cshtml";
+    Layout = "~/Views/Shared/_LayoutPan.cshtml";
 }
 
 <h2>Burasi panel sayfam</h2>
 
+@HttpContext.Current.User.Identity.Name
