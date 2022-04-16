@@ -16,7 +16,7 @@ namespace MvcKutubhane.Controllers
             return View();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult GirisYap(TBLUYELER p)
         {
             var bilgiler = db.TBLUYELERs.FirstOrDefault(x => x.MAIL == p.MAIL && x.SIFRE == p.SIFRE);
