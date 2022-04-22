@@ -21,6 +21,13 @@
     <Property Name="PARA" Type="decimal" Precision="18" Scale="2" />
     <Property Name="HARAKET" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
+  <EntityType Name="TBLHAKKIMIZDA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ACIKLAMA" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="TBLHAREKET">
     <Key>
       <PropertyRef Name="ID" />
@@ -28,9 +35,19 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="KITAP" Type="int" />
     <Property Name="UYE" Type="int" />
-    <Property Name="PERSONEL" Type="tinyint" />
+    <Property Name="PERSONEL" Type="tinyint" Nullable="false" />
     <Property Name="ALISTARIH" Type="smalldatetime" />
     <Property Name="IADETARIH" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="TBLILETISIM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="50" />
+    <Property Name="MAIL" Type="varchar" MaxLength="50" />
+    <Property Name="KONU" Type="varchar" MaxLength="50" />
+    <Property Name="MESAJ" Type="varchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="TBLKASA">
     <Key>
@@ -59,6 +76,7 @@
     <Property Name="YAYINEVI" Type="varchar" MaxLength="50" />
     <Property Name="SAYFA" Type="varchar" MaxLength="4" />
     <Property Name="DURUM" Type="bit" />
+    <Property Name="KITAPRESIM" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="TBLPERSONEL">
     <Key>
@@ -126,8 +144,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TBLHAREKET_TBLPERSONEL">
-    <End Role="TBLPERSONEL" Type="Self.TBLPERSONEL" Multiplicity="0..1" />
+  <Association Name="FK_TBLHAREKET_TBLPERSONEL1">
+    <End Role="TBLPERSONEL" Type="Self.TBLPERSONEL" Multiplicity="1" />
     <End Role="TBLHAREKET" Type="Self.TBLHAREKET" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TBLPERSONEL">
@@ -177,7 +195,9 @@
   <EntityContainer Name="DBKUTUBHANEModelStoreContainer">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLCEZALAR" EntityType="Self.TBLCEZALAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLHAKKIMIZDA" EntityType="Self.TBLHAKKIMIZDA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLHAREKET" EntityType="Self.TBLHAREKET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLILETISIM" EntityType="Self.TBLILETISIM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLKASA" EntityType="Self.TBLKASA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLKATEQORI" EntityType="Self.TBLKATEQORI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLKITAP" EntityType="Self.TBLKITAP" Schema="dbo" store:Type="Tables" />
@@ -196,7 +216,7 @@
       <End Role="TBLKITAP" EntitySet="TBLKITAP" />
       <End Role="TBLHAREKET" EntitySet="TBLHAREKET" />
     </AssociationSet>
-    <AssociationSet Name="FK_TBLHAREKET_TBLPERSONEL" Association="Self.FK_TBLHAREKET_TBLPERSONEL">
+    <AssociationSet Name="FK_TBLHAREKET_TBLPERSONEL1" Association="Self.FK_TBLHAREKET_TBLPERSONEL1">
       <End Role="TBLPERSONEL" EntitySet="TBLPERSONEL" />
       <End Role="TBLHAREKET" EntitySet="TBLHAREKET" />
     </AssociationSet>

@@ -30,13 +30,13 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="KITAP" Type="Int32" />
     <Property Name="UYE" Type="Int32" />
-    <Property Name="PERSONEL" Type="Byte" />
+    <Property Name="PERSONEL" Type="Byte" Nullable="false" />
     <Property Name="ALISTARIH" Type="DateTime" Precision="0" />
     <Property Name="IADETARIH" Type="DateTime" Precision="0" />
     <NavigationProperty Name="TBLCEZALARs" Relationship="Self.FK_TBLCEZALAR_TBLHAREKET" FromRole="TBLHAREKET" ToRole="TBLCEZALAR" />
     <NavigationProperty Name="TBLKITAP" Relationship="Self.FK_TBLHAREKET_TBLKITAP" FromRole="TBLHAREKET" ToRole="TBLKITAP" />
     <NavigationProperty Name="TBLUYELER" Relationship="Self.FK_TBLHAREKET_TBLUYELER" FromRole="TBLHAREKET" ToRole="TBLUYELER" />
-    <NavigationProperty Name="TBLPERSONEL" Relationship="DBKUTUBHANEModel.FK_TBLHAREKET_TBLPERSONEL" FromRole="TBLHAREKET" ToRole="TBLPERSONEL" />
+    <NavigationProperty Name="TBLPERSONEL" Relationship="DBKUTUBHANEModel.FK_TBLHAREKET_TBLPERSONEL1" FromRole="TBLHAREKET" ToRole="TBLPERSONEL" />
   </EntityType>
   <EntityType Name="TBLKASA">
     <Key>
@@ -69,6 +69,7 @@
     <NavigationProperty Name="TBLHAREKETs" Relationship="Self.FK_TBLHAREKET_TBLKITAP" FromRole="TBLKITAP" ToRole="TBLHAREKET" />
     <NavigationProperty Name="TBLKATEQORI" Relationship="Self.FK_TBLKITAP_TBLKATEQORI" FromRole="TBLKITAP" ToRole="TBLKATEQORI" />
     <NavigationProperty Name="TBLYAZAR" Relationship="Self.FK_TBLKITAP_TBLYAZAR" FromRole="TBLKITAP" ToRole="TBLYAZAR" />
+    <Property Name="KITAPRESIM" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="TBLPERSONEL">
     <Key>
@@ -76,7 +77,7 @@
     </Key>
     <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PERSONEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="TBLHAREKETs" Relationship="DBKUTUBHANEModel.FK_TBLHAREKET_TBLPERSONEL" FromRole="TBLPERSONEL" ToRole="TBLHAREKET" />
+    <NavigationProperty Name="TBLHAREKETs" Relationship="DBKUTUBHANEModel.FK_TBLHAREKET_TBLPERSONEL1" FromRole="TBLPERSONEL" ToRole="TBLHAREKET" />
   </EntityType>
   <EntityType Name="TBLUYELER">
     <Key>
@@ -210,13 +211,15 @@
       <End Role="TBLYAZAR" EntitySet="TBLYAZARs" />
       <End Role="TBLKITAP" EntitySet="TBLKITAPs" />
     </AssociationSet>
-    <AssociationSet Name="FK_TBLHAREKET_TBLPERSONEL" Association="DBKUTUBHANEModel.FK_TBLHAREKET_TBLPERSONEL">
+    <AssociationSet Name="FK_TBLHAREKET_TBLPERSONEL1" Association="DBKUTUBHANEModel.FK_TBLHAREKET_TBLPERSONEL1">
       <End Role="TBLPERSONEL" EntitySet="TBLPERSONELs" />
       <End Role="TBLHAREKET" EntitySet="TBLHAREKETs" />
     </AssociationSet>
+    <EntitySet Name="TBLHAKKIMIZDAs" EntityType="DBKUTUBHANEModel.TBLHAKKIMIZDA" />
+    <EntitySet Name="TBLILETISIMs" EntityType="DBKUTUBHANEModel.TBLILETISIM" />
   </EntityContainer>
-  <Association Name="FK_TBLHAREKET_TBLPERSONEL">
-    <End Type="DBKUTUBHANEModel.TBLPERSONEL" Role="TBLPERSONEL" Multiplicity="0..1" />
+  <Association Name="FK_TBLHAREKET_TBLPERSONEL1">
+    <End Type="DBKUTUBHANEModel.TBLPERSONEL" Role="TBLPERSONEL" Multiplicity="1" />
     <End Type="DBKUTUBHANEModel.TBLHAREKET" Role="TBLHAREKET" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TBLPERSONEL">
@@ -227,4 +230,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="TBLHAKKIMIZDA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLILETISIM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KONU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MESAJ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

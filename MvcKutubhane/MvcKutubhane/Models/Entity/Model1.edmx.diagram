@@ -19,7 +19,9 @@
         <AssociationConnector Association="DBKUTUBHANEModel.FK_TBLHAREKET_TBLUYELER" ManuallyRouted="false" />
         <AssociationConnector Association="DBKUTUBHANEModel.FK_TBLKITAP_TBLKATEQORI" ManuallyRouted="false" />
         <AssociationConnector Association="DBKUTUBHANEModel.FK_TBLKITAP_TBLYAZAR" ManuallyRouted="false" />
-        <AssociationConnector Association="DBKUTUBHANEModel.FK_TBLHAREKET_TBLPERSONEL" />
+        <AssociationConnector Association="DBKUTUBHANEModel.FK_TBLHAREKET_TBLPERSONEL1" />
+        <EntityTypeShape EntityType="DBKUTUBHANEModel.TBLHAKKIMIZDA" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="DBKUTUBHANEModel.TBLILETISIM" Width="1.5" PointX="7.375" PointY="7.75" />
       </Diagram>
       <Diagram DiagramId="0ff90c4b0999489995e94b00ec669e46" Name="Diagram2" >
         <EntityTypeShape EntityType="DBKUTUBHANEModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />

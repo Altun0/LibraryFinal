@@ -3,9 +3,9 @@
     "",
     "\\MvcKutubhane",
     "\\MvcKutubhane\\MvcKutubhane",
-    "\\MvcKutubhane\\MvcKutubhane\\Views",
+    "\\MvcKutubhane\\MvcKutubhane\\Controllers",
     "\\MvcKutubhane\\MvcKutubhane\\Views\\Kitap"
   ],
-  "SelectedNode": "\\MvcKutubhane\\MvcKutubhane\\Views\\Kitap\\Index.cshtml",
+  "SelectedNode": "\\MvcKutubhane\\MvcKutubhane\\Controllers\\KitapController.cs",
   "PreviewInSolutionExplorer": false
 }

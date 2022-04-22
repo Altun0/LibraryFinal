@@ -1,5 +1,6 @@
 ﻿@using MvcKutubhane.Models.Entity
 @model List<TBLKITAP>
+@using System.Web;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -27,6 +28,7 @@
         <th>Yayinevi</th>
         <th>Sayfa</th>
         <th>Durum</th>
+        <th>Kitap Resim</th>
         <th>Sil</th>
         <th>Guncelle</th>
     </tr>
@@ -41,6 +43,7 @@
             <td>@k.YAYINEVI</td>
             <td>@k.SAYFA</td>
             <td>@k.DURUM</td>
+            <td>@k.KITAPRESIM</td>
             <td><a href="/Kitap/KitapSil/@k.ID" class="btn btn-danger">Sil</a></td>
             <td><a href="/Kitap/KitapGetir/@k.ID" class="btn btn-success">Guncelle</a></td>
         </tr>
