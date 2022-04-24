@@ -18,7 +18,7 @@
 
     <div class="container">
         <h2>Kutubhanemizden Fotograflar</h2>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:400px; height:200px">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -68,5 +68,14 @@
 
 </body>
 </html>
+
+<div style="margin-top:120px">
+    <form action="/istatistik/resimyukle" method="post" enctype="multipart/form-data">
+        <input type="file" name="dosya" id="dosya" class="btn btn-primary" />
+        <br />
+        <input type="submit" value="Kaydet" class="btn btn-warning" />
+    </form>
+    
+</div>
 
 

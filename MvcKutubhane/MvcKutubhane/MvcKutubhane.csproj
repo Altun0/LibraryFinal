@@ -278,6 +278,11 @@
     <Content Include="web2\js\zingchart.jquery.js" />
     <Content Include="web2\js\zingchart.jquery.min.js" />
     <Content Include="web2\js\zingchart.min.js" />
+    <Content Include="web2\Resimler\ktb1.jpg" />
+    <Content Include="web2\Resimler\ktb2.jpg" />
+    <Content Include="web2\Resimler\ktb3.jpg" />
+    <Content Include="web2\Resimler\ktb4.jpg" />
+    <Content Include="web2\Resimler\ktb5.jpg" />
     <Content Include="web\assets\favicon.ico" />
     <Content Include="web\assets\img\80gundevriadam.jpg" />
     <Content Include="web\assets\img\avataaars.svg" />

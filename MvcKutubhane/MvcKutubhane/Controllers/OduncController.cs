@@ -27,10 +27,19 @@ namespace MvcKutubhane.Controllers
             db.SaveChanges();
             return View();
         }
-        public ActionResult OduncIade(int id)
+        public ActionResult OduncIade(TBLHAREKET p)
         {
-            var odn = db.TBLHAREKETs.Find(id);
+            var odn = db.TBLHAREKETs.Find(p.ID);
+            DateTime d1 = DateTime.Parse(odn.IADETARIH.ToString());
+
+            ViewBag.dgr = d1;
             return View("OduncIade", odn);
+        }
+        public ActionResult OduncGuncelle(TBLHAREKET p)
+        {
+            var hrk = db.TBLHAREKETs.Find(p.ID);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
