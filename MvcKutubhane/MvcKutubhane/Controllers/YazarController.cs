@@ -22,6 +22,10 @@ namespace MvcKutubhane.Controllers
         }
         public ActionResult YazarEkle(TBLYAZAR p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YazarEkle");
+            }
             db.TBLYAZARs.Add(p);
             db.SaveChanges();
             return View();

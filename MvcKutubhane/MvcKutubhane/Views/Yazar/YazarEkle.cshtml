@@ -1,17 +1,17 @@
 ﻿@model MvcKutubhane.Models.Entity.TBLYAZAR
-@{
-    ViewBag.Title = "YazarEkle";
-    Layout = "~/Views/Shared/Layout.cshtml";
-}
+@{ ViewBag.Title = "YazarEkle";
+                Layout = "~/Views/Shared/Layout.cshtml"; }
 <form class="form-group" method="post">
     <div></div>
     <div style="margin-top:15px">
         <label>Yazar Adi</label>
         @Html.TextBoxFor(y => y.AD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y => y.AD);
     </div>
     <div style="margin-top:15px">
         <label>Yazar Soyadi</label>
         @Html.TextBoxFor(y => y.SOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y => y.SOYAD)
     </div>
     <div style="margin-top:15px">
         <label>Yazar Detay Bilgileri</label>

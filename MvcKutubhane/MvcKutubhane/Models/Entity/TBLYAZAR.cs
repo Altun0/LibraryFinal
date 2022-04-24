@@ -12,35 +12,37 @@
 namespace MvcKutubhane.Models.Entity
 {
 
-using System;
+    using System;
     using System.Collections.Generic;
-    
-public partial class TBLYAZAR
-{
+    using System.ComponentModel.DataAnnotations;
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public TBLYAZAR()
+    public partial class TBLYAZAR
     {
 
-        this.TBLKITAPs = new HashSet<TBLKITAP>();
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TBLYAZAR()
+        {
+
+            this.TBLKITAPs = new HashSet<TBLKITAP>();
+
+        }
+
+
+        public int ID { get; set; }
+        [Required(ErrorMessage = "Yazar Adini Bosh Gecemezsiniz")]
+
+        public string AD { get; set; }
+        [StringLength(20, ErrorMessage = "Soyad 20 karakterden uzun olamaz")]
+        public string SOYAD { get; set; }
+
+        public string DETAY { get; set; }
+
+
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+        public virtual ICollection<TBLKITAP> TBLKITAPs { get; set; }
 
     }
-
-
-    public int ID { get; set; }
-
-    public string AD { get; set; }
-
-    public string SOYAD { get; set; }
-
-    public string DETAY { get; set; }
-
-
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<TBLKITAP> TBLKITAPs { get; set; }
-
-}
 
 }
