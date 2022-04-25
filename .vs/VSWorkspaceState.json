@@ -3,11 +3,9 @@
     "",
     "\\MvcKutubhane",
     "\\MvcKutubhane\\MvcKutubhane",
-    "\\MvcKutubhane\\MvcKutubhane\\Controllers",
     "\\MvcKutubhane\\MvcKutubhane\\Views",
-    "\\MvcKutubhane\\MvcKutubhane\\Views\\Kitap",
-    "\\MvcKutubhane\\MvcKutubhane\\Views\\Odunc"
+    "\\MvcKutubhane\\webpanel\\vendor"
   ],
-  "SelectedNode": "\\MvcKutubhane\\MvcKutubhane\\Views\\Odunc\\OduncIade.cshtml",
+  "SelectedNode": "\\MvcKutubhane\\MvcKutubhane\\Views\\Shared",
   "PreviewInSolutionExplorer": false
 }
