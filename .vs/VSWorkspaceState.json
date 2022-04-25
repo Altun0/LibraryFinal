@@ -4,8 +4,10 @@
     "\\MvcKutubhane",
     "\\MvcKutubhane\\MvcKutubhane",
     "\\MvcKutubhane\\MvcKutubhane\\Controllers",
-    "\\MvcKutubhane\\MvcKutubhane\\Views\\Kitap"
+    "\\MvcKutubhane\\MvcKutubhane\\Views",
+    "\\MvcKutubhane\\MvcKutubhane\\Views\\Kitap",
+    "\\MvcKutubhane\\MvcKutubhane\\Views\\Odunc"
   ],
-  "SelectedNode": "\\MvcKutubhane\\MvcKutubhane\\Controllers\\KitapController.cs",
+  "SelectedNode": "\\MvcKutubhane\\MvcKutubhane\\Views\\Odunc\\OduncIade.cshtml",
   "PreviewInSolutionExplorer": false
 }

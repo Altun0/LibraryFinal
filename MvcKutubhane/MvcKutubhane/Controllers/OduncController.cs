@@ -31,8 +31,9 @@ namespace MvcKutubhane.Controllers
         {
             var odn = db.TBLHAREKETs.Find(p.ID);
             DateTime d1 = DateTime.Parse(odn.IADETARIH.ToString());
-
-            ViewBag.dgr = d1;
+            DateTime d2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+            ViewBag.dgr = d3.TotalDays;
             return View("OduncIade", odn);
         }
         public ActionResult OduncGuncelle(TBLHAREKET p)
